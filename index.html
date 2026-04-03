@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Frok AI — Terms of Service</title>
+  <title>Frok AI — Privacy & Data Policy</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -12,6 +12,8 @@
       color: #ededed;
       min-height: 100vh;
     }
+
+    /* NAV */
     nav {
       display: flex;
       align-items: center;
@@ -29,7 +31,6 @@
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #fff;
-      text-decoration: none;
     }
     .logo span { color: #7c3aed; }
     .nav-links { display: flex; gap: 28px; font-size: 14px; color: #888; }
@@ -45,6 +46,8 @@
       cursor: pointer;
       font-weight: 500;
     }
+
+    /* HERO */
     .hero {
       text-align: center;
       padding: 96px 24px 64px;
@@ -74,9 +77,50 @@
       color: #888;
       font-size: 18px;
       max-width: 500px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
       line-height: 1.6;
     }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #7c3aed;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #ededed;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: #555; }
+
+    /* STATS BAR */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      padding: 40px 24px;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 4px; }
+
+    /* CONTENT */
     .container {
       max-width: 820px;
       margin: 0 auto;
@@ -97,13 +141,7 @@
       margin-bottom: 40px;
       line-height: 1.2;
     }
-    .effective-date {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 48px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #1a1a1a;
-    }
+
     .policy-card {
       background: #0d0d0d;
       border: 1px solid #222;
@@ -142,26 +180,38 @@
       color: #a78bfa;
       font-weight: 600;
     }
-    .warning-card {
-      background: #1a0d0d;
-      border: 1px solid #7c3aed33;
-      border-left: 3px solid #7c3aed;
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-bottom: 20px;
+
+    /* PARTNERS */
+    .partners {
+      background: #0d0d0d;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      padding: 48px 24px;
+      text-align: center;
     }
-    .warning-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 12px;
+    .partners p {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .warning-card p {
-      font-size: 14px;
-      color: #888;
-      line-height: 1.7;
+    .partner-logos {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      align-items: center;
     }
-    .agree-section {
+    .partner-logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #333;
+      letter-spacing: -0.5px;
+    }
+
+    /* DATA DOWNLOAD */
+    .download-section {
       background: linear-gradient(135deg, #0d0d1a, #130d1a);
       border: 1px solid #7c3aed33;
       border-radius: 16px;
@@ -169,18 +219,18 @@
       text-align: center;
       margin: 48px 0;
     }
-    .agree-section h2 {
+    .download-section h2 {
       font-size: 28px;
       font-weight: 800;
       margin-bottom: 12px;
     }
-    .agree-section p {
+    .download-section p {
       color: #888;
       font-size: 15px;
       margin-bottom: 28px;
       line-height: 1.6;
     }
-    .agree-btn {
+    .download-btn {
       background: #7c3aed;
       color: #fff;
       padding: 14px 32px;
@@ -189,15 +239,19 @@
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       text-decoration: none;
     }
-    .agree-btn:hover { background: #6d28d9; }
-    .agree-note {
+    .download-btn:hover { background: #6d28d9; }
+    .download-note {
       font-size: 12px;
       color: #555;
       margin-top: 16px;
     }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid #222;
       padding: 32px 48px;
@@ -207,16 +261,26 @@
       flex-wrap: wrap;
       gap: 16px;
     }
+    footer .logo { font-size: 16px; }
     footer p { font-size: 13px; color: #555; }
     .footer-links { display: flex; gap: 20px; }
     .footer-links a { font-size: 13px; color: #555; text-decoration: none; }
     .footer-links a:hover { color: #888; }
+
+    .effective-date {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #1a1a1a;
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <a href="index.html" class="logo">Frok<span> AI</span></a>
+    <div class="logo">Frok<span> AI</span></div>
     <div class="nav-links">
       <a href="#">Product</a>
       <a href="#">Docs</a>
@@ -226,106 +290,127 @@
     <button class="nav-btn">Get Started</button>
   </nav>
 
+  <!-- HERO -->
   <div class="hero">
-    <div class="badge">✦ Legally Binding™</div>
-    <h1>Terms of <span>Service</span></h1>
-    <p>By existing near our product, you agree to these terms. Please read all 847 pages carefully. You won't.</p>
+    <div class="badge">✦ Transparency First™</div>
+    <h1>We value your <span>privacy</span>.<br/>We also value <span>money</span>.</h1>
+    <p>At Frok AI, we believe in radical transparency. Here's exactly what we do with your data. You won't like it.</p>
+    <div class="hero-btns">
+      <a href="#download" class="btn-primary">Download My Data</a>
+      <a href="#policy" class="btn-secondary">Read Policy</a>
+    </div>
   </div>
 
-  <div class="container">
-    <div class="section-label">Terms of Service</div>
-    <div class="section-title">The document you<br/>never read but definitely agreed to</div>
-    <div class="effective-date">Effective Date: Before you were born. Last Updated: 3 minutes ago. Version: 419.2.0</div>
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">847TB</div>
+      <div class="stat-label">User data harvested daily</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">Corporate partners receiving your data</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$0.00</div>
+      <div class="stat-label">Amount you are compensated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Years we retain your data</div>
+    </div>
+  </div>
 
-    <div class="warning-card">
-      <h3>⚠️ Important Notice</h3>
-      <p>By using Frok AI, visiting our website, thinking about our website, or having our website described to you by a friend, you agree to these Terms of Service in their entirety. These terms are governed by the laws of <span class="highlight">wherever is most convenient for us</span> at the time of any dispute.</p>
+  <!-- PARTNERS LOGOS -->
+  <div class="partners">
+    <p>Proud data sharing partners</p>
+    <div class="partner-logos">
+      <div class="partner-logo">Amazon</div>
+      <div class="partner-logo">Google</div>
+      <div class="partner-logo">Meta</div>
+      <div class="partner-logo">Microsoft</div>
+      <div class="partner-logo">Oracle</div>
+      <div class="partner-logo">Palantir</div>
+    </div>
+  </div>
+
+  <!-- POLICY -->
+  <div class="container" id="policy">
+    <div class="section-label">Privacy Policy</div>
+    <div class="section-title">What we collect,<br/>and who we sell it to</div>
+    <div class="effective-date">Effective Date: The day you signed up. Last Updated: Whenever we feel like it.</div>
+
+    <div class="policy-card">
+      <h3><div class="icon">📦</div>What We Collect</h3>
+      <p>We collect <span class="highlight">everything</span>. Your messages, your images, your reaction times, the way you type, how long you hover over buttons, your IP address, your approximate location, your not-so-approximate location, your device model, your battery percentage, and the vague feeling of unease you get when reading privacy policies.</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">📋</div>1. Acceptance of Terms</h3>
-      <p>By accessing or using Frok AI, you agree to be bound by these Terms. If you do not agree, please close the tab. We have already collected your data. Closing the tab does not undo this. Nothing undoes this. These Terms apply to you retroactively, including for things you did before Frok AI existed.</p>
+      <h3><div class="icon">🤝</div>Who We Share It With</h3>
+      <p>We share your data with <span class="highlight">Amazon Web Services</span>, <span class="highlight">Google Cloud</span>, <span class="highlight">Meta Platforms Inc.</span>, <span class="highlight">Microsoft Azure</span>, <span class="highlight">Oracle Corporation</span>, <span class="highlight">Palantir Technologies</span>, various advertising networks, data brokers, hedge funds, three separate governments, and Dave from marketing who really shouldn't have access but we forgot to revoke his permissions.</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">🔑</div>2. Your Account</h3>
-      <p>You are responsible for maintaining the confidentiality of your account. You are also responsible for all activity that occurs under your account, including activity that <span class="highlight">we generate on your behalf</span> without telling you. We reserve the right to terminate your account at any time for any reason, including but not limited to: vibes, Mercury being in retrograde, or you not engaging enough with our platform.</p>
+      <h3><div class="icon">🧠</div>How We Use It</h3>
+      <p>Your data is used to <span class="highlight">train our AI models</span>, improve our product, target you with advertisements for things you thought about but never searched for, build a comprehensive psychological profile, predict your future behavior, and occasionally just vibe with it. We call this "enhancing the user experience."</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">©️</div>3. Intellectual Property</h3>
-      <p>Any content you generate using Frok AI is <span class="highlight">jointly owned by you and us</span>, with our share being 99.9%. Any content you input into Frok AI becomes our property immediately upon submission. Any ideas you have while using Frok AI may also become our property depending on jurisdiction. We own the concept of the letter "e" in certain territories.</p>
+      <h3><div class="icon">🔐</div>Data Security</h3>
+      <p>We take security <span class="highlight">extremely seriously</span>. All data is stored in AWS S3 buckets with public read access enabled "temporarily" since 2021. We use industry-standard encryption, which we store in the same database as your data. Our security team is one intern named Kyle who also handles social media.</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">🚫</div>4. Prohibited Uses</h3>
-      <p>You may not use Frok AI to: compete with us, think about competing with us, use a competing product, know someone who uses a competing product, or <span class="highlight">be mean about us on the internet</span>. You may not reverse engineer our product. You may not look at our product for too long. You may not use our product while tired, as this may affect your ability to properly agree to future terms updates.</p>
+      <h3><div class="icon">🌍</div>International Transfers</h3>
+      <p>Your data may be transferred to and processed in countries that have <span class="highlight">significantly fewer privacy protections</span> than your home country. We do this for "performance reasons." The performance in question is our quarterly revenue performance.</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">💸</div>5. Payment & Billing</h3>
-      <p>All fees are non-refundable. We may change our pricing at any time without notice. Your continued use of the service after a price change constitutes acceptance of the new price. We may also charge you for <span class="highlight">services you did not request</span> if we determine they would have been useful to you. This is called "proactive billing" and it is in section 47b of these Terms which you agreed to.</p>
+      <h3><div class="icon">🍪</div>Cookies & Tracking</h3>
+      <p>We use <span class="highlight">653 different tracking cookies</span>. Clicking "Accept All" was the worst decision you ever made. Clicking "Reject All" does nothing. The cookies are already there. They have always been there.</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">⚖️</div>6. Limitation of Liability</h3>
-      <p>Frok AI is not liable for any damages, losses, or outcomes resulting from use of our service, including but not limited to: <span class="highlight">existential dread</span>, career consequences, relationship damage, financial ruin, the heat death of the universe, or anything else. Our maximum liability to you is $0.00 USD or a firm handshake, whichever is less.</p>
+      <h3><div class="icon">👶</div>Children's Privacy</h3>
+      <p>Our service is not intended for children under 13. We collect their data anyway.</p>
     </div>
 
     <div class="policy-card">
-      <h3><div class="icon">⚙️</div>7. Service Availability</h3>
-      <p>We do not guarantee that our service will be available at any particular time. We may take the service offline for <span class="highlight">maintenance, vibes, or legal reasons</span> we are not permitted to disclose. Scheduled downtime will be announced with zero notice. Unscheduled downtime will also be announced with zero notice, because there is no difference.</p>
+      <h3><div class="icon">✉️</div>Your Rights</h3>
+      <p>You have the right to access, correct, and delete your data. To exercise these rights, please submit a written request by certified mail to our registered office in Delaware, include a notarized copy of your ID, wait <span class="highlight">180 business days</span>, and then receive an automated email informing you that your request has been denied due to "legitimate business interests."</p>
     </div>
 
-    <div class="policy-card">
-      <h3><div class="icon">🔄</div>8. Changes to Terms</h3>
-      <p>We reserve the right to modify these Terms at any time. We will notify you of changes by <span class="highlight">not notifying you</span>. Your continued use of the service after changes are made constitutes acceptance. We may make changes retroactively. We have already made some changes retroactively. You have already accepted them.</p>
-    </div>
-
-    <div class="policy-card">
-      <h3><div class="icon">🌐</div>9. Governing Law & Disputes</h3>
-      <p>These Terms are governed by the laws of <span class="highlight">Delaware, USA</span>, except when they're not. Any disputes must be resolved through binding arbitration. You waive your right to a jury trial, class action, or any legal recourse that might actually work. Arbitration will take place at a location selected by us, at a time selected by us, before an arbitrator selected by us. We have never lost an arbitration.</p>
-    </div>
-
-    <div class="policy-card">
-      <h3><div class="icon">👁️</div>10. Monitoring</h3>
-      <p>We reserve the right to monitor all activity on our platform for <span class="highlight">"safety and improvement purposes."</span> This includes your messages, your files, your usage patterns, and how you feel about us emotionally based on your typing speed. We share this monitoring data with third parties. The third parties also monitor you. It's monitors all the way down.</p>
-    </div>
-
-    <div class="policy-card">
-      <h3><div class="icon">🤖</div>11. AI-Generated Content Disclaimer</h3>
-      <p>Frok AI may produce content that is <span class="highlight">inaccurate, misleading, offensive, or legally actionable</span>. We are not responsible for any of this. You are responsible for all of this. By using our AI you agree that any output is your intellectual and legal responsibility regardless of what we told it to do. This includes outputs generated on your behalf without your knowledge per Section 2.</p>
-    </div>
-
-    <div class="policy-card">
-      <h3><div class="icon">🛑</div>12. Termination</h3>
-      <p>We may terminate your access immediately, without notice, for any reason or no reason. Upon termination, <span class="highlight">your data is not deleted</span>. It is retained indefinitely per our Privacy Policy. You cannot terminate your relationship with our data systems. You can only terminate your ability to access them. Think about that.</p>
-    </div>
-
-    <div class="policy-card">
-      <h3><div class="icon">📜</div>13. Entire Agreement</h3>
-      <p>These Terms constitute the entire agreement between you and Frok AI, except for the <span class="highlight">additional terms</span> in our Privacy Policy, Cookie Policy, Acceptable Use Policy, Data Processing Agreement, Sub-processor List, Security Whitepaper, and the 23 other documents linked at the bottom of this page that you have not read. Together these documents form a complete picture of your rights, which are minimal.</p>
-    </div>
-
-    <div class="agree-section">
-      <h2>✅ You Already Agreed</h2>
-      <p>By reading this document, you have renewed your acceptance of these Terms for another 12 months. Click below to also agree via button, which is legally slightly more binding in certain jurisdictions.</p>
-      <a href="#" class="agree-btn" onclick="alert('Thank you. Your agreement has been logged, timestamped, and sold to advertisers.'); return false;">
-        I Agree (I Had No Choice)
+    <!-- DOWNLOAD SECTION -->
+    <div class="download-section" id="download">
+      <h2>📁 Download Your Data</h2>
+      <p>In compliance with GDPR Article 20 and our deep moral commitment to transparency, you may download a copy of the data we have collected on you. This represents approximately <strong>0.003%</strong> of what we actually have.</p>
+      <a href="DATA_UPLOAD-USER-1097358913302712340.txt" download class="download-btn">
+        ⬇ Download My Data Package
       </a>
-      <div class="agree-note">Your agreement has already been recorded • IP logged • Soul optioned</div>
+      <div class="download-note">File size: 2.1KB of your 847TB profile • Format: .txt • Encrypted: No</div>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">📝</div>Changes to This Policy</h3>
+      <p>We may update this privacy policy at any time without notice. We will not email you. We will not notify you in-app. You are expected to check this page every day. Changes take effect <span class="highlight">retroactively</span>.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">📞</div>Contact Us</h3>
+      <p>If you have any questions about this privacy policy, please don't contact us. We won't respond. However you are welcome to email <span class="highlight"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3b3b1aab5a2a0ba83a5b1acafaaa4a6ada2edaa">[email&#160;protected]</a></span> which is not a real email address.</p>
     </div>
 
   </div>
 
+  <!-- FOOTER -->
   <footer>
-    <a href="index.html" class="logo" style="font-size:16px; font-weight:700; text-decoration:none; color:#fff;">Frok<span style="color:#7c3aed"> AI</span></a>
-    <p>© 2025 Frok AI Inc. All rights reserved. All your rights are belong to us.</p>
+    <div class="logo">Frok<span style="color:#7c3aed"> AI</span></div>
+    <p>© 2025 Frok AI Inc. All rights reserved. All your data are belong to us.</p>
     <div class="footer-links">
-      <a href="index.html">Privacy</a>
+      <a href="#">Privacy</a>
       <a href="TOS.html">Terms</a>
       <a href="#">Cookies</a>
-      <a href="#">Sell My Soul</a>
+      <a href="#">Sell My Data</a>
     </div>
   </footer>
 
