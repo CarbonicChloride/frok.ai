@@ -1,1 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frok AI — Privacy & Data Policy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #ededed;
+      min-height: 100vh;
+    }
 
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+    .logo span { color: #7c3aed; }
+    .nav-links { display: flex; gap: 28px; font-size: 14px; color: #888; }
+    .nav-links a { color: #888; text-decoration: none; }
+    .nav-links a:hover { color: #fff; }
+    .nav-btn {
+      background: #7c3aed;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 96px 24px 64px;
+      border-bottom: 1px solid #222;
+    }
+    .badge {
+      display: inline-block;
+      background: #1a1a2e;
+      border: 1px solid #7c3aed44;
+      color: #a78bfa;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 span { color: #7c3aed; }
+    .hero p {
+      color: #888;
+      font-size: 18px;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #7c3aed;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #ededed;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: #555; }
+
+    /* STATS BAR */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      padding: 40px 24px;
+      border-bottom: 1px solid #222;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 4px; }
+
+    /* CONTENT */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #7c3aed;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .policy-card {
+      background: #0d0d0d;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .policy-card:hover { border-color: #7c3aed44; }
+    .policy-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .policy-card h3 .icon {
+      width: 28px;
+      height: 28px;
+      background: #1a1a2e;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .policy-card p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.7;
+    }
+    .policy-card .highlight {
+      color: #a78bfa;
+      font-weight: 600;
+    }
+
+    /* PARTNERS */
+    .partners {
+      background: #0d0d0d;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .partners p {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .partner-logos {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .partner-logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #333;
+      letter-spacing: -0.5px;
+    }
+
+    /* DATA DOWNLOAD */
+    .download-section {
+      background: linear-gradient(135deg, #0d0d1a, #130d1a);
+      border: 1px solid #7c3aed33;
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .download-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .download-section p {
+      color: #888;
+      font-size: 15px;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .download-btn {
+      background: #7c3aed;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .download-btn:hover { background: #6d28d9; }
+    .download-note {
+      font-size: 12px;
+      color: #555;
+      margin-top: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #222;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer .logo { font-size: 16px; }
+    footer p { font-size: 13px; color: #555; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: #555; text-decoration: none; }
+    .footer-links a:hover { color: #888; }
+
+    .effective-date {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Frok<span> AI</span></div>
+    <div class="nav-links">
+      <a href="#">Product</a>
+      <a href="#">Docs</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blog</a>
+    </div>
+    <button class="nav-btn">Get Started</button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">✦ Transparency First™</div>
+    <h1>We value your <span>privacy</span>.<br/>We also value <span>money</span>.</h1>
+    <p>At Frok AI, we believe in radical transparency. Here's exactly what we do with your data. You won't like it.</p>
+    <div class="hero-btns">
+      <a href="#download" class="btn-primary">Download My Data</a>
+      <a href="#policy" class="btn-secondary">Read Policy</a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">847TB</div>
+      <div class="stat-label">User data harvested daily</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">Corporate partners receiving your data</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$0.00</div>
+      <div class="stat-label">Amount you are compensated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Years we retain your data</div>
+    </div>
+  </div>
+
+  <!-- PARTNERS LOGOS -->
+  <div class="partners">
+    <p>Proud data sharing partners</p>
+    <div class="partner-logos">
+      <div class="partner-logo">Amazon</div>
+      <div class="partner-logo">Google</div>
+      <div class="partner-logo">Meta</div>
+      <div class="partner-logo">Microsoft</div>
+      <div class="partner-logo">Oracle</div>
+      <div class="partner-logo">Palantir</div>
+    </div>
+  </div>
+
+  <!-- POLICY -->
+  <div class="container" id="policy">
+    <div class="section-label">Privacy Policy</div>
+    <div class="section-title">What we collect,<br/>and who we sell it to</div>
+    <div class="effective-date">Effective Date: The day you signed up. Last Updated: Whenever we feel like it.</div>
+
+    <div class="policy-card">
+      <h3><div class="icon">📦</div>What We Collect</h3>
+      <p>We collect <span class="highlight">everything</span>. Your messages, your images, your reaction times, the way you type, how long you hover over buttons, your IP address, your approximate location, your not-so-approximate location, your device model, your battery percentage, and the vague feeling of unease you get when reading privacy policies.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">🤝</div>Who We Share It With</h3>
+      <p>We share your data with <span class="highlight">Amazon Web Services</span>, <span class="highlight">Google Cloud</span>, <span class="highlight">Meta Platforms Inc.</span>, <span class="highlight">Microsoft Azure</span>, <span class="highlight">Oracle Corporation</span>, <span class="highlight">Palantir Technologies</span>, various advertising networks, data brokers, hedge funds, three separate governments, and Dave from marketing who really shouldn't have access but we forgot to revoke his permissions.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">🧠</div>How We Use It</h3>
+      <p>Your data is used to <span class="highlight">train our AI models</span>, improve our product, target you with advertisements for things you thought about but never searched for, build a comprehensive psychological profile, predict your future behavior, and occasionally just vibe with it. We call this "enhancing the user experience."</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">🔐</div>Data Security</h3>
+      <p>We take security <span class="highlight">extremely seriously</span>. All data is stored in AWS S3 buckets with public read access enabled "temporarily" since 2021. We use industry-standard encryption, which we store in the same database as your data. Our security team is one intern named Kyle who also handles social media.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">🌍</div>International Transfers</h3>
+      <p>Your data may be transferred to and processed in countries that have <span class="highlight">significantly fewer privacy protections</span> than your home country. We do this for "performance reasons." The performance in question is our quarterly revenue performance.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">🍪</div>Cookies & Tracking</h3>
+      <p>We use <span class="highlight">653 different tracking cookies</span>. Clicking "Accept All" was the worst decision you ever made. Clicking "Reject All" does nothing. The cookies are already there. They have always been there.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">👶</div>Children's Privacy</h3>
+      <p>Our service is not intended for children under 13. We collect their data anyway.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">✉️</div>Your Rights</h3>
+      <p>You have the right to access, correct, and delete your data. To exercise these rights, please submit a written request by certified mail to our registered office in Delaware, include a notarized copy of your ID, wait <span class="highlight">180 business days</span>, and then receive an automated email informing you that your request has been denied due to "legitimate business interests."</p>
+    </div>
+
+    <!-- DOWNLOAD SECTION -->
+    <div class="download-section" id="download">
+      <h2>📁 Download Your Data</h2>
+      <p>In compliance with GDPR Article 20 and our deep moral commitment to transparency, you may download a copy of the data we have collected on you. This represents approximately <strong>0.003%</strong> of what we actually have.</p>
+      <a href="DATA_UPLOAD-USER-1097358913302712340.txt" download class="download-btn">
+        ⬇ Download My Data Package
+      </a>
+      <div class="download-note">File size: 2.1KB of your 847TB profile • Format: .txt • Encrypted: No</div>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">📝</div>Changes to This Policy</h3>
+      <p>We may update this privacy policy at any time without notice. We will not email you. We will not notify you in-app. You are expected to check this page every day. Changes take effect <span class="highlight">retroactively</span>.</p>
+    </div>
+
+    <div class="policy-card">
+      <h3><div class="icon">📞</div>Contact Us</h3>
+      <p>If you have any questions about this privacy policy, please don't contact us. We won't respond. However you are welcome to email <span class="highlight"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3b3b1aab5a2a0ba83a5b1acafaaa4a6ada2edaa">[email&#160;protected]</a></span> which is not a real email address.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">Frok<span style="color:#7c3aed"> AI</span></div>
+    <p>© 2025 Frok AI Inc. All rights reserved. All your data are belong to us.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a hr
